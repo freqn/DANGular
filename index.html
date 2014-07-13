@@ -4,11 +4,12 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/style.css">
 </head>
-<body>
-  <div ng-controller="StoreController as store" class="item">
-    <h1> {{store.product.name}} </h1>
-    <h2> Price: {{store.product.price}} </h2>
-    <p>  <b>Description:</b><br/> {{store.product.description}} </p>
+<body ng-controller="StoreController as store" class="item">
+  <div ng-repeat="product in store.products">
+    <h1> {{product.name}} </h1>
+    <h2> Price: {{product.price}} </h2>
+    <p>  <b>Description:</b><br/> {{product.description}} </p>
+    <button ng-show="product.canPurchase"> Add to Cart </button>
   </div>
   <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
